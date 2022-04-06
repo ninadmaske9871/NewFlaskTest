@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html overflow="scroll">
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+
+</head>
+
+<body style="background-color:LightGray;">
+ <div class="login">
+ <h2 style="text-align: center;">&nbsp;</h2>
+	<h2 style="text-align: center;">Predict Customer Order Return</h2>
+	
+	<form action="{{ url_for('predict')}}"method="post">
+	
+	<table style="width: 351px; margin-left: auto; margin-right: auto;" border="0" align="center">
+<tbody>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">item_id</td>
+<td style="width: 166.021px;"><input name="item_id" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">item_color</td>
+<td style="width: 166.021px;"><input name="item_color" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">brand_id</td>
+<td style="width: 166.021px;"><input name="brand_id" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">item_price</td>
+<td style="width: 166.021px;"><input name="item_price" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">user_id</td>
+<td style="width: 166.021px;"><input name="user_id" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">user_title</td>
+<td style="width: 166.021px;"><input name="user_title" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">user_state</td>
+<td style="width: 166.021px;"><input name="user_state" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">New_Old_User</td>
+<td style="width: 166.021px;"><input name="New_Old_User" required="required" type="text" /></td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 168.979px;">Age</td>
+<td style="width: 166.021px;"><input name="Age" required="required" type="text" /></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 168.979px;">order_month</td>
+<td style="width: 166.021px;"><input name="order_month" required="required" type="text" /></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 168.979px;">delivery_time</td>
+<td style="width: 166.021px;"><input name="delivery_time" required="required" type="text" /></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 168.979px;">item_size_standardised</td>
+<td style="width: 166.021px;"><input name="item_size_standardised" required="required" type="text" /></td>
+</tr>
+<tr>
+<td style="text-align: left; width: 168.979px;">price_expensive_cheap</td>
+<td style="width: 166.021px;"><input name="price_expensive_cheap" required="required" type="text" /></td>
+</tr>
+</tbody>
+</table>
+
+        
+     
+
+<p align = "center"><button class="btn btn-primary btn-block btn-large" type="submit">Predict</button></p>
+    </form>
+
+ 
+
+   <h4 style="text-align: center;">
+   
+   {{ prediction_text }}
+</h4>
+ </div>
+
+
+</body>
+</html>
